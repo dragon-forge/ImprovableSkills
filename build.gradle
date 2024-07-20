@@ -530,12 +530,9 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
 
-import java.nio.file.Files
-
 def incrementBuild = {
     if (!hasConfig("build_candidate") || !Boolean.parseBoolean(config.build_candidate)) {
-        def buildTxt = configFile.toPath()
-        List<String> lines = Files.readAllLines buildTxt
+        List<String> lines = configFile.text.readLines()
         lines.replaceAll { String ln ->
             if (ln.startsWith("mod_version")) {
                 def version = ln.split("=")[1]
@@ -564,7 +561,7 @@ def incrementBuild = {
             }
             return ln
         }
-        Files.write buildTxt, lines, java.nio.file.StandardOpenOption.CREATE
+        configFile.setText(lines.join('\n'))
     } else println "Build candidate enabled, we are not increasing build number after this."
 }
 

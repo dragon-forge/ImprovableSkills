@@ -1,9 +1,9 @@
 # Mod Info
-mod_version=20.1.10
+mod_version=20.1.11
 build_candidate=false
 
 # Mod dependencies (jei is not a requirement, but HammerLib is)
-hl_version=20.1.30
+hl_version=20.1.32
 jei_version=15.2.0.22
 
 # Persistent mod info
@@ -48,6 +48,4 @@ last_git_commit=6ab3321007af74b
 required_mods=hammer-lib;
 optional_mods=jei;
 incompatible_mods=
-embedded_mods=
-_mods=
 embedded_mods=

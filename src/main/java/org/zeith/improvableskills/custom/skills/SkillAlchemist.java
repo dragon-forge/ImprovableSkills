@@ -31,10 +31,11 @@ public class SkillAlchemist
 		int lvl = data.getSkillLevel(this);
 		boolean working = isActive && lvl > 0;
 		
-		if(!working && data.player.level().isClientSide)
+		Level level = data.player.level();
+		
+		if(!working || level.isClientSide)
 			return;
 		
-		Level level = data.player.level();
 		BlockPos center = data.player.blockPosition();
 		
 		int rad = 3;
