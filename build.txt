@@ -3,8 +3,8 @@ mod_version=21.0.2
 build_candidate=false
 
 # Mod dependencies (jei is not a requirement, but HammerLib is)
-hl_version=21.0.11
-jei_version=19.0.0.9
+hl_version=21.0.13
+jei_version=19.8.2.99
 
 # Persistent mod info
 mod_id=improvableskills

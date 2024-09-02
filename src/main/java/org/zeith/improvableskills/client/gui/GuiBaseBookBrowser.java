@@ -233,7 +233,7 @@ public abstract class GuiBaseBookBrowser<TX extends GuiBaseBookBrowser.ITxInstan
 					var tex = texes.get(j);
 					
 					double x = (i % row) * 28 + guiLeft + 16;
-					double y = (i / row) * 28 - (prevScrolledPixels + (scrolledPixels - prevScrolledPixels) * minecraft.getTimer().getGameTimeDeltaPartialTick(true));
+					double y = (i / row) * 28 - (prevScrolledPixels + (scrolledPixels - prevScrolledPixels) * minecraft.getTimer().getRealtimeDeltaTicks());
 					
 					if(tex == skill)
 					{

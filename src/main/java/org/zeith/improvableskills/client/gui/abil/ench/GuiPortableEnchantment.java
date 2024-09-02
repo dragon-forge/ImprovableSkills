@@ -270,7 +270,7 @@ public class GuiPortableEnchantment
 	@Override
 	public void render(GuiGraphics gfx, int mouseX, int mouseY, float partial)
 	{
-		partial = this.minecraft.getTimer().getGameTimeDeltaPartialTick(true);
+		partial = this.minecraft.getTimer().getRealtimeDeltaTicks();
 		renderTransparentBackground(gfx);
 		super.render(gfx, mouseX, mouseY, partial);
 		this.renderTooltip(gfx, mouseX, mouseY);

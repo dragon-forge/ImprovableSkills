@@ -124,7 +124,7 @@ public class GuiNewsBook
 		if(translated != null)
 		{
 			pose.pushPose();
-			pose.translate(0, Mth.lerp(minecraft.getTimer().getGameTimeDeltaPartialTick(true), prevScroll, scroll), 0);
+			pose.translate(0, Mth.lerp(minecraft.getTimer().getRealtimeDeltaTicks(), prevScroll, scroll), 0);
 			maxScroll = 0;
 			for(FormattedCharSequence formattedcharsequence : font.split(translated, (int) gui1.width - 22))
 			{
@@ -152,7 +152,7 @@ public class GuiNewsBook
 	public static void spawnLoading(float width, float height)
 	{
 		Minecraft mc = Minecraft.getInstance();
-		float partialTicks = mc.getTimer().getGameTimeDeltaPartialTick(true);
+		float partialTicks = mc.getTimer().getRealtimeDeltaTicks();
 		
 		int dots = 3;
 		float angle = 360 / dots;

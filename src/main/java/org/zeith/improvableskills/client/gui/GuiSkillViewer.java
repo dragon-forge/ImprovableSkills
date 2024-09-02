@@ -166,7 +166,7 @@ public class GuiSkillViewer
 		RenderUtils.drawTexturedModalRect(pose, 0, 0, 0, 0, xSize, ySize);
 		gfx.setColor(1, 1, 1, 1);
 		
-		float lev = Mth.lerp(minecraft.getTimer().getGameTimeDeltaPartialTick(true), prevLevel, currentLevel) / skill.getMaxLevel();
+		float lev = Mth.lerp(minecraft.getTimer().getRealtimeDeltaTicks(), prevLevel, currentLevel) / skill.getMaxLevel();
 		
 		if(!IClientSkillExtensions.of(skill).slotRenderer().drawSlot(gfx, 10, 6, 32, 32, lev, partialTicks))
 		{
