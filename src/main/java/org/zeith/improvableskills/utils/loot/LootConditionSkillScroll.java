@@ -23,6 +23,7 @@ import org.zeith.hammerlib.annotations.SimplyRegister;
 import org.zeith.hammerlib.util.java.Cast;
 import org.zeith.improvableskills.ImprovableSkills;
 import org.zeith.improvableskills.api.registry.PlayerSkillBase;
+import org.zeith.improvableskills.cfg.ConfigsIS;
 import org.zeith.improvableskills.data.PlayerDataManager;
 
 import java.util.Optional;
@@ -94,7 +95,7 @@ public record LootConditionSkillScroll(NumberProvider chance, PlayerSkillBase sk
 		
 		if(p != null)
 			return PlayerDataManager.handleDataSafely(p,
-					data -> !data.hasSkillScroll(skill) || data.getSkillProgress(skill) < 1F, true
+					data -> !data.hasSkillScroll(skill) || (ConfigsIS.dropScrollsAfterUnlock && data.getSkillProgress(skill) < 1F), true
 			);
 		
 		return false;
