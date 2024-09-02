@@ -23,6 +23,7 @@ public class ConfigsIS
 	public static boolean xpBank;
 	public static boolean addBookToInv;
 	public static boolean parchmentGeneration = true;
+	public static boolean dropScrollsAfterUnlock = true;
 	public static int parchmentRarity = 10;
 	public static List<String> blockedParchmentChests = List.of();
 	
@@ -37,6 +38,11 @@ public class ConfigsIS
 			xpBank = gameplay.getElement(ConfiguredLib.BOOLEAN, "XP Storage")
 					.withDefault(true)
 					.withComment("Should XP Bank be active in the book? Disabling this only hides the skill from the player.")
+					.getValue();
+			
+			dropScrollsAfterUnlock = gameplay.getElement(ConfiguredLib.BOOLEAN, "Drop Scrolls After Unlock")
+					.withDefault(true)
+					.withComment("Should scrolls still drop for players that have unlocked the skill already, but haven't yet maxxed it out?")
 					.getValue();
 			
 			var parchmentFragment = gameplay.getElement(ConfiguredLib.CATEGORY, "Parchment Fragment")

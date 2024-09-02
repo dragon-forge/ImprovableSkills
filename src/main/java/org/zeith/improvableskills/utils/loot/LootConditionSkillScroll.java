@@ -16,6 +16,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.FakePlayer;
 import org.zeith.hammerlib.util.java.Cast;
 import org.zeith.improvableskills.api.registry.PlayerSkillBase;
+import org.zeith.improvableskills.cfg.ConfigsIS;
 import org.zeith.improvableskills.data.PlayerDataManager;
 
 import java.util.Optional;
@@ -86,8 +87,9 @@ public class LootConditionSkillScroll
 		}
 		
 		if(p != null)
-			return PlayerDataManager.handleDataSafely(p, data -> !data.hasSkillScroll(skill) ||
-																 data.getSkillProgress(skill) < 1F, true);
+			return PlayerDataManager.handleDataSafely(p,
+					data -> !data.hasSkillScroll(skill) || (ConfigsIS.dropScrollsAfterUnlock && data.getSkillProgress(skill) < 1F), true
+			);
 		
 		return false;
 	}
