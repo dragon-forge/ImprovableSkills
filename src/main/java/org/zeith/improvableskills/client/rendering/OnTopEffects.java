@@ -92,7 +92,7 @@ public class OnTopEffects
 	{
 		var gs = e.getScreen();
 		int mx = e.getMouseX(), my = e.getMouseY();
-		float pt = Minecraft.getInstance().getTimer().getRealtimeDeltaTicks();
+		float pt = Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(true);
 		
 		var gfx = e.getGuiGraphics();
 		var pose = gfx.pose();
@@ -121,7 +121,7 @@ public class OnTopEffects
 	@Override
 	public void render(GuiGraphics gfx, DeltaTracker time)
 	{
-		float pt = time.getRealtimeDeltaTicks();
+		float pt = time.getGameTimeDeltaPartialTick(true);
 		var pose = gfx.pose();
 		
 //		if(Minecraft.getInstance().screen != null)

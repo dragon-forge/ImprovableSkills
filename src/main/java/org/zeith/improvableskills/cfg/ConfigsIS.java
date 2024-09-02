@@ -30,6 +30,7 @@ public class ConfigsIS
 	public static boolean addBookToInv;
 	public static boolean parchmentGeneration = true;
 	public static boolean dropScrollsAfterUnlock = true;
+	public static boolean autouseScrolls = false;
 	public static int parchmentRarity = 10;
 	public static List<String> blockedParchmentChests = List.of();
 	
@@ -49,6 +50,11 @@ public class ConfigsIS
 			dropScrollsAfterUnlock = gameplay.getElement(ConfiguredLib.BOOLEAN, "Drop Scrolls After Unlock")
 					.withDefault(true)
 					.withComment("Should scrolls still drop for players that have unlocked the skill already, but haven't yet maxxed it out?")
+					.getValue();
+			
+			autouseScrolls = gameplay.getElement(ConfiguredLib.BOOLEAN, "Auto-Use Scrolls")
+					.withDefault(false)
+					.withComment("Enabling this option will automatically use scrolls once they enter player's inventory.")
 					.getValue();
 			
 			var parchmentFragment = gameplay.getElement(ConfiguredLib.CATEGORY, "Parchment Fragment")
