@@ -2,14 +2,15 @@ package org.zeith.improvableskills.custom.items;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.resources.language.I18n;
-import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.*;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.*;
@@ -21,6 +22,7 @@ import org.zeith.improvableskills.ImprovableSkills;
 import org.zeith.improvableskills.SyncSkills;
 import org.zeith.improvableskills.api.registry.PlayerSkillBase;
 import org.zeith.improvableskills.api.tooltip.SkillTooltip;
+import org.zeith.improvableskills.cfg.ConfigsIS;
 import org.zeith.improvableskills.data.PlayerDataManager;
 import org.zeith.improvableskills.init.ItemsIS;
 import org.zeith.improvableskills.net.PacketScrollLevelupSkill;
@@ -167,6 +169,41 @@ public class ItemSkillScroll
 			
 			return new InteractionResultHolder<>(InteractionResult.PASS, held);
 		}, new InteractionResultHolder<>(InteractionResult.PASS, held));
+	}
+	
+	@Override
+	public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected)
+	{
+		if(ConfigsIS.autouseScrolls && pEntity instanceof ServerPlayer playerIn)
+		{
+			PlayerDataManager.handleDataSafely(playerIn, data ->
+			{
+				PlayerSkillBase base = getSkillFromScroll(pStack);
+				
+				if(base == null)
+					return;
+				
+				if(!data.hasSkillScroll(base) && data.unlockSkillScroll(base, true))
+				{
+					ItemStack used = pStack.copy();
+					
+					pStack.shrink(1);
+					
+					pLevel.playSound(null, playerIn.blockPosition(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 0.5F, 1F);
+					Network.sendTo(new PacketScrollUnlockedSkill(pSlotId, used, base.getRegistryName()), playerIn);
+				} else if(data.getSkillLevel(base) < base.getMaxLevel())
+				{
+					data.setSkillLevel(base, data.getSkillLevel(base) + 1);
+					ItemStack used = pStack.copy();
+					
+					pStack.shrink(1);
+					
+					pLevel.playSound(null, playerIn.blockPosition(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 0.5F, 1F);
+					Network.sendTo(new PacketScrollLevelupSkill(pSlotId, used, base.getRegistryName()), playerIn);
+				}
+			});
+		}
+		super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
 	}
 	
 	@Override

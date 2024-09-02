@@ -81,6 +81,8 @@ public class PacketScrollUnlockedSkill
 			));
 		}
 		
+		if(slot >= 9) return;
+		
 		Random rand = new Random();
 		Minecraft mc = Minecraft.getInstance();
 		Window sr = mc.getWindow();

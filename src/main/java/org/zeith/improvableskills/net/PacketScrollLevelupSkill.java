@@ -72,6 +72,8 @@ public class PacketScrollLevelupSkill
 				sk.getLocalizedName(SyncSkills.getData())
 		));
 		
+		if(slot >= 9) return;
+		
 		Random rand = new Random();
 		Minecraft mc = Minecraft.getInstance();
 		Window sr = mc.getWindow();
