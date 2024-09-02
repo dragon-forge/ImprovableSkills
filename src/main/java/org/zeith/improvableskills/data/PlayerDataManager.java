@@ -72,7 +72,7 @@ public class PlayerDataManager
 		// This should never happen, but if it does, we try to reconstruct player's data from the persistent tag in case it's there. (remote players, maybe?!)
 		if(epl instanceof ServerPlayer mp)
 		{
-			var data = mp.hasData(ComponentsIS.SKILL_DATA) ? mp.getData(ComponentsIS.SKILL_DATA) : null;
+			var data = mp.getData(ComponentsIS.SKILL_DATA);
 			if(data != null) DATAS.put(mp.getUUID(), data);
 		}
 		
