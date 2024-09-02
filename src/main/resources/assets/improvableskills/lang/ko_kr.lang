@@ -1,0 +1,182 @@
+
+itemGroup.improvableskills=스킬 개선
+jei.improvableskills:parchf=함께 떨어뜨리기
+
+#ITEMS#
+item.improvableskills.skills_book=기술의 책
+item.improvableskills.scroll_normal=기술 페이지
+item.improvableskills.scroll_creative=크리에이티브 기술 페이지
+item.improvableskills.scroll_creative.tooltip0=모든 숨겨진 스킬을 잠금 해제합니다.
+item.improvableskills.scroll_creative.tooltip1=사용 시, 당신은 §k치트§7를 사용 중임을 기억하세요.
+item.improvableskills.parchment_fragment=양피지 조각
+item.improvableskills.scroll_ability=능력 페이지
+
+#SKILLS#
+skill.improvableskills:accelerated_furnace.name=가속로
+skill.improvableskills:accelerated_furnace.desc=화로의 용해 속도를 증가시킵니다. 화로가 더 빨라지려면, 화로에서 반경 5블록 이내에 있어야 합니다.
+
+skill.improvableskills:mining.name=채광
+skill.improvableskills:mining.desc=곡괭이의 채광 속도를 증가시킵니다.
+
+skill.improvableskills:digging.name=굴착
+skill.improvableskills:digging.desc=삽의 굴착 속도를 증가시킵니다.
+
+skill.improvableskills:cutting.name=벌목
+skill.improvableskills:cutting.desc=도끼의 벌목 속도를 증가시킵니다.
+
+skill.improvableskills:attack_speed.name=공격 속도
+skill.improvableskills:attack_speed.desc=모든 도구의 공격 속도를 증가시킵니다.
+
+skill.improvableskills:leaper.name=높이 뛰기
+skill.improvableskills:leaper.desc=점프 높이를 증가시킵니다.
+
+skill.improvableskills:soft_landing.name=부드러운 착지
+skill.improvableskills:soft_landing.desc=낙하 피해를 감소시킵니다. 높은 곳에서 떨어져도 (최대 레벨에서는) 생존할 수 있습니다.
+
+skill.improvableskills:obsidian_skin.name=흑요석 방패
+skill.improvableskills:obsidian_skin.desc=화염/용암 피해를 감소시킵니다.
+
+skill.improvableskills:ladder_king.name=사다리 왕
+skill.improvableskills:ladder_king.desc=사다리를 오르는 속도를 증가시킵니다.
+
+skill.improvableskills:treasure_finder.name=보물 찾기
+skill.improvableskills:treasure_finder.desc=채광 중 귀중한 재료를 발견할 수 있습니다.
+
+skill.improvableskills:pvp_protection.name=PvP 보호
+skill.improvableskills:pvp_protection.desc=PvP 피해 보호를 증가시킵니다.
+
+skill.improvableskills:luck_of_the_sea.name=바다의 행운
+skill.improvableskills:luck_of_the_sea.desc=낚시의 유인을 증가시킵니다.
+
+skill.improvableskills:item_repair.name=아이템 수리자
+skill.improvableskills:item_repair.desc=아이템을 천천히 수리합니다. 양손과 착용 중인 갑옷에 모두 적용됩니다.
+
+skill.improvableskills:health.name=추가 체력
+skill.improvableskills:health.desc=최대 HP를 최대 +20 HP (10 하트)까지 증가시킵니다.
+
+skill.improvableskills:growth.name=빠른 성장
+skill.improvableskills:growth.desc=주변 식물에 무작위로 뼛가루를 적용합니다.
+
+skill.improvableskills:alchemist.name=연금술사
+skill.improvableskills:alchemist.desc=양조대의 속도를 증가시킵니다. 연금술을 많이 하는 사람들에게 좋습니다.
+
+skill.improvableskills:generic_protection.name=단단한 피부
+skill.improvableskills:generic_protection.desc=적에게 더 강한 피부를 만듭니다. 용이 되어보세요.
+
+skill.improvableskills:treasure_sands.name=모래의 보물
+skill.improvableskills:treasure_sands.desc=모래에서 보물을 발견할 수 있습니다.
+
+skill.improvableskills:atkdmg_melee.name=강한 주먹
+skill.improvableskills:atkdmg_melee.desc=근접 공격 시 피해를 증가시킵니다.
+
+skill.improvableskills:atkdmg_ranged.name=날카로운 화살
+skill.improvableskills:atkdmg_ranged.desc=원거리 공격 시 피해를 증가시킵니다.
+
+skill.improvableskills:pvp.name=PvP 보호
+skill.improvableskills:pvp.desc=다른 플레이어로부터 받는 피해를 감소시킵니다.
+
+skill.improvableskills:enchanter.name=마법부여사
+skill.improvableskills:enchanter.desc=마법 부여에 필요한 최소 레벨을 감소시킵니다. (4레벨마다 효과 증가)
+
+skill.improvableskills:ender_manipulator.name=엔더 조작자
+skill.improvableskills:ender_manipulator.desc=엔더 진주로 인한 피해를 무효화합니다. 마지막 레벨에서는 던지는 사람을 치유할 확률이 있습니다.
+
+skill.improvableskills:xp_plus.name=경험치 수확
+skill.improvableskills:xp_plus.desc=채광, 동물 번식, 낚시 및 몹 처치 시 얻을 수 있는 경험치를 증가시킵니다.
+
+skill.improvableskills:silent_foot.name=조용한 발걸음
+skill.improvableskills:silent_foot.desc=당신이 만드는 모든 진동의 반경을 줄입니다.
+
+skill.improvableskills:dexterous_arms.name=재주 좋은 팔
+skill.improvableskills:dexterous_arms.desc=모든 도구가 사용될 때 손상되지 않도록 하여 더 오래 지속되게 만듭니다.
+
+skill.improvableskills:fast_swimmer.name=빠른 수영
+skill.improvableskills:fast_swimmer.desc=모든 액체에서 수영 속도를 증가시킵니다.
+
+skill.improvableskills:soul_speed.name=영혼의 속도
+skill.improvableskills:soul_speed.desc=영혼 모래 위에서 부츠 없이 이동 속도를 증가시킵니다. 부작용으로 영혼 모래를 걸을 때 부츠가 손상됩니다.
+
+skill.improvableskills:huckster.name=상인
+skill.improvableskills:huckster.desc=마을 주민의 특별 가격을 낮춰 더 저렴하게 거래할 수 있습니다.
+
+skill.improvableskills:mob_repellent.name=몹 퇴치
+skill.improvableskills:mob_repellent.desc=적대적 생명체를 멀리 밀어냅니다. 높은 레벨에서는 효과 범위가 증가합니다.
+
+pagelet.improvableskills:xp_bank=경험치 은행
+
+#ABILITIES#
+ability.improvableskills:enchanting.name=마법부여사
+ability.improvableskills:crafter.name=제작자
+ability.improvableskills:anvil.name=대장장이
+ability.improvableskills:magnetism.name=자기력
+ability.improvableskills:auto_xp_bank.name=자동 경험치 은행
+ability.improvableskills:cowboy.name=카우보이
+
+#BUTTONS#
+button.improvableskills:upgrade=업그레이드
+button.improvableskills:degrade=다운그레이드
+
+#TEXTS#
+text.improvableskills:level=레벨 %s/%s
+text.improvableskills:totalXP=당신의 경험치: %s XP
+text.improvableskills:storeall=모두 저장
+text.improvableskills:draw1lvl=1 레벨 빼기
+text.improvableskills:draw10lvls=10 레벨 빼기
+text.improvableskills:enchpower=마법 부여력: %,d
+chat.improvableskills.guide=당신은 기술의 책을 만들었습니다! 이제 특정 기술을 향상시킬 수 있습니다.
+chat.improvableskills.page_unlocked=새로운 기술 (%s) 잠금 해제!
+chat.improvableskills.page_upgraded=기술 (%s) 레벨 업!
+chat.improvableskills.ability_unlocked=새로운 능력 (%s) 잠금 해제!
+gui.improvableskills.locked=§4사용 불가. 기술의 책을 제작해 잠금 해제하세요.
+chat.improvableskills:skill_reset_self=당신의 스킬 레벨과 스크롤이 초기화되었습니다.
+chat.improvableskills:skill_reset_tother=%s의 스킬 레벨과 스크롤을 초기화했습니다.
+chat.improvableskills:skill_reset_fother=%s이/가 당신의 스킬 레벨과 스크롤을 초기화했습니다.
+gui.improvableskills:nver=새 버전
+gui.improvableskills:changes=변경사항
+text.improvableskills:shiftfrecipe=&6&lSHIFT&r&7를 눌러 제작법 보기.
+text.improvableskills:unresolved_item=해결되지 않은 아이템
+
+gui.improvableskills.toggle_skill.disabled=%s을(를) 사용 중이지 않습니다. 클릭하여 전환하세요.
+gui.improvableskills.toggle_skill.enabled=%s이(가) 사용 중입니다. 클릭하여 전환하세요.
+
+text.improvableskills.magnetism.off=자석 기능이 현재 비활성화되어 있습니다.
+text.improvableskills.magnetism.on=자석 기능이 현재 활성화되어 있습니다. %s 블록 범위 내의 아이템을 줍습니다.
+
+text.improvableskills.auto_xp_bank.off=자동 경험치 은행이 현재 비활성화되어 있습니다.
+text.improvableskills.auto_xp_bank.on=자동 경험치 은행이 현재 활성화되어 있습니다. %s 레벨을 유지합니다.
+
+#SUBTITLES#
+subtitles.improvableskills:treasure_found=보물 발견됨
+subtitles.improvableskills:skill_book_open=기술의 책 열림
+subtitles.improvableskills:skill_book_closed=기술의 책 닫힘
+
+#PAGELETS#
+pagelet.improvableskills:update=새로운 버전이 있습니다!
+pagelet.improvableskills:news=뉴스
+pagelet.improvableskills:discord1=디스코드
+pagelet.improvableskills:discord2=도움이 필요하거나 멋진 아이디어가 있으신가요? 부끄러워 하지 마세요, 지금 우리의 디스코드에 참여하세요! 여러분의 의견과 제안을 기다립니다. (제작자들도 매우 환영합니다!)
+pagelet.improvableskills:skills=기술
+pagelet.improvableskills:abilities=능력
+
+#RECIPES#
+recipe.improvableskills:skill.luck_of_the_sea=&b낚시&7로 &410%%&7 확률로 드랍합니다.
+recipe.improvableskills:skill.obsidian_skin=&b네더 요새&7에서 &433,[3]%%&7 확률로 발견됩니다.
+recipe.improvableskills:skill.atkdmg_ranged=&b스켈레톤&7으로부터 &42,5%%&7 확률로 드랍합니다.
+recipe.improvableskills:skill.alchemist=&b마녀&7로부터 &410%%&7 확률로 드랍합니다.
+recipe.improvableskills:skill.growth=&b정글 사원&7에서 &425%%&7 확률로 발견됩니다.
+recipe.improvableskills:skill.ender_manipulator=&b엔더맨&7으로부터 &45%%&7 확률로 드랍합니다.
+recipe.improvableskills:skill.generic_protection=&b지하 스포너 방&7에서 &425%%&7 확률로 발견됩니다.
+recipe.improvableskills:skill.health=&b엔드 도시&7에서 &411,[1]%%&7 확률로 발견됩니다.
+recipe.improvableskills:skill.enchanter=&b엔드 요새&7에서 &425%%&7 확률로 발견됩니다.
+recipe.improvableskills:skill.treasure_sands=&b사막 사원&7에서 &412,5%%&7 확률로 발견됩니다.
+recipe.improvableskills:skill.xp_plus=&b엘더 가디언&7으로부터 &433,[3]%%&7 확률로 드랍합니다.
+recipe.improvableskills:skill.silent_foot=&b고대 도시&7에서 &4100%%&7 확률로 발견됩니다.
+recipe.improvableskills:skill.dexterous_arms=&b버려진 광산&7에서 &425%%&7 확률로 발견됩니다.
+recipe.improvableskills:skill.soul_speed=&b피글린&7으로부터 &414.29%%&7 확률로 거래합니다.
+recipe.improvableskills:skill.huckster=레이드를 끝낸 후 &b사서&7에게 선물로 제공됩니다.
+recipe.improvableskills:skill.mob_repellent=마을의 &b방어구 장이 상자&7에서 발견됩니다.
+
+recipe.improvableskills:ability=서로 가까이 떨어뜨리고 기다립니다: %s
+
+#MISC#
+improvableskills.jer.skill_condition='%s' 스킬이 잠겨 있지 않은 경우에만 드랍됩니다.
