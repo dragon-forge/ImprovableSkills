@@ -1,5 +1,5 @@
 # Mod Info
-mod_version=20.1.12
+mod_version=20.1.13
 build_candidate=false
 
 # Mod dependencies (jei is not a requirement, but HammerLib is)
@@ -38,7 +38,7 @@ modrinth_project=9fT7HUaI
 release_type=release
 
 # Keeping track of latest git commit for changelog generation!
-last_git_commit=a57f79ccbbfb322
+last_git_commit=ad41f9c50fd2741
 
 # List of mods separated by ;
 # If a specific mod for one platform is needed, @m: or @c: prefixes are used.
