@@ -12,13 +12,13 @@ buildscript {
     dependencies {
         classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.4.+"
         classpath 'org.spongepowered:mixingradle:0.7.+'
-        classpath "se.bjurr.gitchangelog:git-changelog-gradle-plugin:+"
     }
 }
 
 plugins {
     id "com.modrinth.minotaur" version "2.+"
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id("se.bjurr.gitchangelog.git-changelog-gradle-plugin") version "2.5.2"
 }
 
 apply plugin: 'net.minecraftforge.gradle'
@@ -26,7 +26,6 @@ apply plugin: 'idea'
 apply plugin: 'maven-publish'
 apply plugin: "com.matthewprenger.cursegradle"
 apply plugin: 'org.spongepowered.mixin'
-apply plugin: 'se.bjurr.gitchangelog.git-changelog-gradle-plugin'
 
 ext.configFile = file("build.txt")
 configFile.withReader {
