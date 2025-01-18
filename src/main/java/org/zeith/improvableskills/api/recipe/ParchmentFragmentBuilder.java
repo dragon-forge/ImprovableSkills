@@ -2,16 +2,16 @@ package org.zeith.improvableskills.api.recipe;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import org.zeith.hammerlib.core.RecipeHelper;
 import org.zeith.hammerlib.core.adapter.recipe.RecipeBuilder;
 import org.zeith.hammerlib.util.mcf.itf.IRecipeRegistrationEvent;
 import org.zeith.improvableskills.api.registry.PlayerAbilityBase;
 import org.zeith.improvableskills.custom.items.ItemAbilityScroll;
-import org.zeith.improvableskills.init.RecipeTypesIS;
 
 public class ParchmentFragmentBuilder
-		extends RecipeBuilder<ParchmentFragmentBuilder, Recipe<?>>
+		extends RecipeBuilder<ParchmentFragmentBuilder>
 {
 	protected final NonNullList<Ingredient> ingredients = NonNullList.create();
 	protected boolean identifierSet;
@@ -52,14 +52,16 @@ public class ParchmentFragmentBuilder
 	}
 	
 	@Override
-	public void register()
+	protected void validate()
 	{
-		if(!identifierSet) return;
-		validate();
-		if(!event.enableRecipe(RecipeTypesIS.PARCHMENT_FRAGMENT_TYPE, getIdentifier())) return;
+		super.validate();
 		if(ingredients.isEmpty())
 			throw new IllegalStateException(getClass().getSimpleName() + " does not have any defined ingredients!");
-		var id = getIdentifier();
-		event.register(id, new RecipeParchmentFragment(id, group, result, ingredients));
+	}
+	
+	@Override
+	protected Recipe<?> createRecipe()
+	{
+		return new RecipeParchmentFragment(getIdentifier(), group, result, ingredients);
 	}
 }

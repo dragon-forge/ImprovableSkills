@@ -164,7 +164,12 @@ public class PlayerSkillBase
 	
 	public SkillLoot getLoot()
 	{
-		return lockedWithScroll && generateScroll ? (loot == null ? (loot = new SkillLoot(this)) : loot) : null;
+		return lockedWithScroll && generateScroll ? (loot == null ? (loot = createLoot()) : loot) : null;
+	}
+	
+	protected SkillLoot createLoot()
+	{
+		return new SkillLoot(this);
 	}
 	
 	public boolean isVisible(PlayerSkillData data)
@@ -212,7 +217,9 @@ public class PlayerSkillBase
 	
 	public enum EnumScrollState
 	{
-		NONE, NORMAL, SPECIAL;
+		NONE,
+		NORMAL,
+		SPECIAL;
 		
 		public boolean hasScroll()
 		{

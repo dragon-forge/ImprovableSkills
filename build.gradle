@@ -18,7 +18,6 @@ buildscript {
 plugins {
     id "com.modrinth.minotaur" version "2.+"
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id("se.bjurr.gitchangelog.git-changelog-gradle-plugin") version "2.5.2"
 }
 
 apply plugin: 'net.minecraftforge.gradle'
@@ -464,20 +463,6 @@ publish.dependsOn('reobfJar')
 
 build.dependsOn signJar
 
-task generateChangelog(type: se.bjurr.gitchangelog.plugin.gradle.GitChangelogTask) {
-    group = "git changelog"
-    if (config.last_git_commit != null && !config.last_git_commit.isEmpty()) fromRevision = config.last_git_commit
-    templateContent = """
-Changelog:
-
-{{#tags}}
-  {{#commits}}
-- {{messageTitle}} ([{{hash}}](https://github.com/{{ownerName}}/{{repoName}}/commit/{{hash}})) by {{authorName}}
-  {{/commits}}
-{{/tags}}
-"""
-}
-
 tasks.register('buildAndUploadMod') {
     group = "upload"
     dependsOn "curseforge${config.cf_project}", 'modrinth'
@@ -488,8 +473,6 @@ tasks.register('buildAndUploadMod') {
 }
 
 afterEvaluate {
-    tasks["signJar"].dependsOn.add(generateChangelog)
-
     if (!config.maven_url.isEmpty()) {
         tasks["curseforge${config.cf_project}"].dependsOn.add(publish)
         tasks["modrinth"].dependsOn.add(publish)
@@ -539,24 +522,6 @@ def incrementBuild = {
                 def newVersion = version.substring(0, dot)
                 def lastOne = Integer.parseInt(version.substring(dot)) + 1
                 return "mod_version=" + newVersion + lastOne
-            }
-            if (ln.startsWith("last_git_commit")) {
-                def lastCommit = ln.split("=", 2)[1]
-                def truncated = se.bjurr.gitchangelog.api.GitChangelogApi.gitChangelogApiBuilder()
-                        .withFromRevision(lastCommit)
-                        .withFromRepo(projectDir)
-                        .withTemplateContent("""
-{{#tags}}
-{{#commits}}
-[START]{{hash}}[END]
-{{/commits}}
-{{/tags}}
-""").render()
-
-                def found = truncated.indexOf("[START]")
-                def endIdx = truncated.indexOf("[END]", found)
-                if (found == -1 || endIdx == -1) return ln
-                return "last_git_commit=" + truncated.substring(found + 7, endIdx)
             }
             return ln
         }

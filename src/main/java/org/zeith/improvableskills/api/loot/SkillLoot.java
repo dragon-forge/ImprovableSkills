@@ -60,7 +60,7 @@ public class SkillLoot
 	{
 		if(lootTableChecker != null && lootTableChecker.test(id))
 		{
-			ImprovableSkills.LOG.info("Injecting scroll for skill '" + skill.getRegistryName().toString() + "' into LootTable '" + table.getLootTableId() + "'!");
+			ImprovableSkills.LOG.info("Injecting scroll for skill '{}' into LootTable '{}'!", skill.getRegistryName().toString(), table.getLootTableId());
 			
 			try
 			{
@@ -81,8 +81,7 @@ public class SkillLoot
 				);
 			} catch(Throwable err)
 			{
-				ImprovableSkills.LOG.error("Failed to inject scroll for skill '" + skill.getRegistryName().toString() + "' into LootTable '" + table.getLootTableId() + "'!!!");
-				err.printStackTrace();
+				ImprovableSkills.LOG.error("Failed to inject scroll for skill '{}' into LootTable '{}'!!!", skill.getRegistryName().toString(), table.getLootTableId(), err);
 			}
 		}
 	}
